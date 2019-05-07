@@ -1,9 +1,9 @@
 function spotEachRebel(rebels) {
   var spottedRebelCalls = []
 
-  if (rebels) {
+  rebels.forEach( function() {
     spottedRebelCalls.push('Look! Rebel scum!')
-  }
+  })
 
   return spottedRebelCalls
 }
@@ -12,10 +12,10 @@ function seeRebelsEscape(rebels) {
   var escapedRebelCalls = []
   var i = 0
 
-  do {
+  while (rebels[i] && rebels[i]['plotArmor']){
     escapedRebelCalls.push("Oh no! They're getting away!")
     i++
-  } while (rebels[i] && rebels[i]['plotArmor'])
+  }
 
   return escapedRebelCalls
 }
@@ -23,7 +23,7 @@ function seeRebelsEscape(rebels) {
 function shootAtNothing(shots) {
   var shotsAtNothing = []
 
-  for (var i = 1; i < shots; i++) {
+  for (var i = 0; i < shots; i++) {
     shotsAtNothing.push('pew')
   }
 
